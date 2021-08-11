@@ -4,16 +4,23 @@ from django.shortcuts import render, HttpResponse
 # Create your views here.
 
 def home(request):
-    return HttpResponse('This is my homepage')
+    return render(request, 'home/home_page.html', {})
 
-def resume(request):
-    return HttpResponse('This is my resume page')
+def about(request):
+    return render(request, 'home/about.html', {})
 
 def projects(request):
-    return HttpResponse('This is my projects page')
-
-def services(request):
-    return HttpResponse(' This is my servicepage')
+    return render(request, 'home/projects.html', {})
 
 def contact(request):
-    return HttpResponse('This is my contactpage')
+    context1 = {
+        'My_email' : 'Email : bashiradigun78@gmail.com',
+        'Mobile_number' : 'Mobile number: +23480777777777'
+    }
+    return render(request, 'home/contact.html', context1)
+
+def blog(request):
+    return render(request, 'home/blog.html', {})
+
+# def register(request):
+#     return render(request, 'home/register.html', {})
