@@ -1,11 +1,18 @@
-<!-- {% extends 'admin/base.html' %} -->
+{% extends 'admin/base.html' %}
+{% load static %}
+
+
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/main.css' %}">
+
+
 <nav>
     <ul>
-        <li>ABOUT</li>
-        <li>PROJECTS</li>
-        <li>CONTACT</li>
-        <li>BLOG</li>
+        <li style="list-style-type: none;"><a class="active" href="{% url 'home' %}">HOME</a></li>
+        <li style="list-style-type: none;"><a href="{% url 'about' %}">ABOUT</a></li>
+        <li style="list-style-type: none;"><a href="{% url 'projects' %}">PROJECTS</a></li>
+        <li style="list-style-type: none;"><a href="{% url 'contact' %}">CONTACT</a></li>
+        <li style="list-style-type: none;"><a href="{% url 'blog' %}">BLOG</a></li>
     </ul>
 </nav>
 {% endblock content %}
